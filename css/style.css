@@ -221,6 +221,22 @@ p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--slate);max-width:60ch}
 [dir="rtl"] .mega-feature-body h4{font-family:var(--font-ar)}
 .mega-feature-body .go{font-size:.8rem;font-weight:700;color:#fff;display:inline-flex;gap:6px;align-items:center;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 
+/* Portrait variant — the exec photo is a small circular avatar, not a wide banner
+   photo, so forcing it to cover-fill this card crops it down to a sliver of a
+   face with text stamped over it. Show the whole portrait as a clean circle on
+   a solid navy card instead; text then sits on the card, never on the face. */
+.mega-feature.has-avatar{
+  background:linear-gradient(135deg,var(--navy-800) 0%,var(--navy-950) 100%);
+  flex-direction:column;align-items:flex-start;justify-content:center;padding:24px;
+}
+.mega-feature.has-avatar::before{content:none}
+.mega-feature.has-avatar .mf-avatar{
+  width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  border:3px solid var(--gold-400);box-shadow:var(--shadow-md);margin-bottom:16px;
+}
+.mega-feature.has-avatar .mf-avatar img{position:static;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.mega-feature.has-avatar .mega-feature-body{padding:0}
+
 .header-cta{display:flex;align-items:center;gap:14px;flex-shrink:0}
 .header-cta .contact-link{font-size:.9rem;font-weight:600;color:var(--navy-800);transition:color .2s}
 .header-cta .contact-link:hover,.header-cta .contact-link.active{color:var(--gold-600)}
