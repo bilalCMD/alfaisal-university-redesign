@@ -72,6 +72,11 @@ function renderActive(str, activeKey) {
   return str.replace(/\{\{ACTIVE:([a-z-]+)\}\}/g, (_, k) => (k === activeKey ? 'active' : ''));
 }
 
+// Clean URLs: drop the .html extension from linked paths (Vercel serves/redirects
+// extensionless routes via cleanUrls). index.html is left as-is since stripping it
+// would produce an empty href on English (root-level) pages.
+const cleanLink = (file) => (file === 'index.html' ? file : file.replace(/\.html$/, ''));
+
 function buildLang(lang, root, altRootFn) {
   const header = read(`partials/header.${lang}.html`);
   const footer = read(`partials/footer.${lang}.html`);
@@ -86,16 +91,16 @@ function buildLang(lang, root, altRootFn) {
     h = renderActive(h, page.key);
 
     if (lang === 'en') {
-      h = h.replace(/\{\{AR_LINK\}\}/g, `ar/${page.file}`);
+      h = h.replace(/\{\{AR_LINK\}\}/g, `ar/${cleanLink(page.file)}`);
     } else {
-      h = h.replace(/\{\{EN_LINK\}\}/g, `../${page.file}`);
+      h = h.replace(/\{\{EN_LINK\}\}/g, `../${cleanLink(page.file)}`);
     }
 
     const title = lang === 'en' ? page.title : page.titleAr;
     const desc = lang === 'en' ? page.desc : page.descAr;
     const htmlLang = lang === 'en' ? 'en' : 'ar';
     const dir = lang === 'en' ? 'ltr' : 'rtl';
-    const altHref = lang === 'en' ? `ar/${page.file}` : `../${page.file}`;
+    const altHref = lang === 'en' ? `ar/${cleanLink(page.file)}` : `../${cleanLink(page.file)}`;
 
     const shell = `<!DOCTYPE html>
 <html lang="${htmlLang}" dir="${dir}" data-alt-href="${altHref}">
