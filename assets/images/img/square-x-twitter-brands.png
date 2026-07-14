@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+	
+
+<head>
+	
+	<meta charset="utf-8" />
+	
+	<title>Alfaisal University - 404 Not Found Page</title>
+	
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+	
+	
+
+	<meta name="description" content="404- page not found. Alfaisal University" />
+	
+	
+	<link href="https://www.alfaisal.edu/assets/images/style.css" rel="stylesheet" type="text/css" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']
+
+=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new 
+
+Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)
+
+[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61325393-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,800,600,700,300|Raleway:300' type='text/css'>
+	
+	</head>
+	
+	<body>
+		
+		<section class="image-background">
+		
+			<article class="page-text">
+			<h1>404</h1>
+            <img src="https://www.alfaisal.edu/assets/images/logo_alfaisal.jpg" width="177" height="141" align="middle">
+			<h2>Oops...... Page Not Found</h2>
+			<p>Sorry, but the page that you requested doesn't exist.<br><br>
+               </p>
+			</article>
+			
+			<article class="page-links">
+			<form action="https://www.alfaisal.edu/en/search.php" method="get" role="search">
+			<input type="text" name="zoom_query" class="form-control" id="zoom_query" placeholder="What are you looking for?" autofocus />
+			<input type="submit" value="GO" />
+			</form>
+			
+			<p>
+			<a href="https://www.facebook.com/alfaisaluniv" target="_blank"><img src="https://www.alfaisal.edu/assets/images/facebook.png" title="Social Links" alt="Social Links" /></a>
+			<a href="https://www.twitter.com/alfaisaluniv" target="_blank"><img src="https://www.alfaisal.edu/assets/images/twitter.png" title="Social Links" alt="Social Links" /></a>
+			<a href="https://plus.google.com/+جامعةالفيصل/posts" target="_blank"><img src="https://www.alfaisal.edu/assets/images/google.png" title="Social Links" alt="Social Links" /></a><a href="https://www.youtube.com/user/alfaisaluniv" target="_blank"><img src="https://www.alfaisal.edu/assets/images/youtube.png" title="Social Links" alt="Social Links" /></a></p>
+			
+			<p><a href="https://www.alfaisal.edu" class="back-home">Back Home</a></p>
+			</article>
+		
+		</section>
+		
+	</body>
+
+
+
+</html>
