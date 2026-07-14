@@ -260,10 +260,30 @@ p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--slate);max-width:60ch}
 .hero-content .breadcrumb{animation:heroFadeUp .7s var(--ease) both}
 
 @media (prefers-reduced-motion:reduce){
-  .hero-media img,.badge-float,.hero-content .eyebrow,.hero-content h1,.hero-content p.lead,.hero-content .hero-actions,.hero-content .breadcrumb{
+  .hero-media img,.badge-float,.hero-badge,.hero-content .eyebrow,.hero-content h1,.hero-content p.lead,.hero-content .hero-actions,.hero-content .breadcrumb{
     animation:none!important;
   }
 }
+
+/* Hero achievement card — floats in the open media space beside the hero copy */
+.hero-badge{
+  position:absolute;z-index:2;inset-inline-end:9%;top:54%;transform:translateY(-50%);
+  display:flex;align-items:center;gap:16px;max-width:270px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-radius:var(--radius-lg);padding:22px 26px;box-shadow:var(--shadow-lg);
+  animation:heroFadeUp .8s var(--ease) .4s both,floatBadge 3.6s ease-in-out 1.2s infinite;
+}
+.hero-badge-icon{
+  flex-shrink:0;width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-400),var(--gold-600));
+  display:flex;align-items:center;justify-content:center;font-size:1.35rem;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.hero-badge-num{display:block;font-family:var(--font-serif);font-size:1.3rem;font-weight:700;color:#fff;line-height:1.15}
+.hero-badge-label{display:block;font-size:.78rem;color:rgba(255,255,255,.78);margin-top:5px;line-height:1.4}
+@media (max-width:1180px){.hero-badge{display:none}}
+
 .hero-scroll{position:absolute;bottom:28px;inset-inline:0;margin:auto;width:fit-content;z-index:2;color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
 .hero-scroll .line{width:1px;height:36px;background:rgba(255,255,255,.4);animation:scrolldown 2s infinite}
 @keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.01%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
